@@ -1,0 +1,18 @@
+<html>
+<b> ON PI </b>
+
+Take image (jpg or png) and convert to svg (or json?)
+Take image are create tool path (list of points for plotter to go to (x,y) in mm)
+Send that list of points to arduino over usb or I2C
+
+<b> ON ARDUINO </b>
+
+Grab data from usb or I2C, store it in an array
+Convert array of (x,y) into array of (pwm1, pwm2)
+Wait for "go" command
+Loop through array and send pwm vals
+While looping, read analog pot vals 
+
+
+
+</html>
