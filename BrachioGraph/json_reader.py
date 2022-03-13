@@ -4,8 +4,12 @@
 #It will output an array with the appropriate formatting for the Arduino
 
 import json
+import os
 
 def read_json(fileName):
+    actual_file_name = '/home/pi/csi4103-project/BrachioGraph/images/' + fileName
+    print(actual_file_name)
+    print(os.getcwd())
     line_array = []
 
     # Opening JSON file
