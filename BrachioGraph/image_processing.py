@@ -1,4 +1,3 @@
-#See the attached .txt file
 from linedraw import *
 
 
