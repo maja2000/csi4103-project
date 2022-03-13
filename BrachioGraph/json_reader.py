@@ -6,14 +6,14 @@
 import json
 
 def read_json(fileName):
-    line_array = array[]
+    line_array = []
 
     # Opening JSON file
     f = open(fileName)
 
     # returns JSON object as
     # a dictionary
-    data = json.load(f)
+    data = json.loads(f)
 
     # Iterating through the json
     # list
