@@ -1,7 +1,7 @@
 from linedraw import *
 
 
-#image_to_json("africa.jpg", draw_contours=2, draw_hatch=16)
+image_to_json("africa.jpg", draw_contours=2, draw_hatch=16)
 #This code finds an image with the indicated name in the 'images' directory and:
 #    -draws the contours and hatch lines
 #    -creates a JSON file with the same name
