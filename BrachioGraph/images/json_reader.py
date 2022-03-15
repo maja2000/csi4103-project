@@ -44,5 +44,5 @@ def write_to_text(jsonData):
         return
 
 
-json_data = read_json('africa.jpg.json')
+json_data = read_json("africa.jpg.json")
 write_to_text(json_data)
