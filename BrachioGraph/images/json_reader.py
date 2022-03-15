@@ -33,16 +33,12 @@ def read_json(fileName):
     # Closing file
     f.close()
 
-    print(data)
+    #print(data)
     return data
 
 
 def write_to_text(jsonData):
-    with open('plaintext_coordinates.txt', 'w') as f:
+    with open('images/plaintext_coordinates.txt', 'w') as f:
         for item in jsonData:
             f.write(str(item))
         return
-
-
-json_data = read_json("africa.jpg.json")
-write_to_text(json_data)
