@@ -6,8 +6,8 @@ import numpy
 import inverse_kinematics as ik
 
 # Lengths of arms in cm (for now)
-forearm = 16 
-bicep = 16
+forearm = 10.4
+bicep = 10.0
 # gotta figure out if this is actually origin
 origin = [0,0]
 
@@ -22,9 +22,8 @@ image_to_json("africa.jpg", draw_contours=2, draw_hatch=0)
 #    draw_hatch = 16 (between 8 and 16)
 
 json_data = json_reader.read_json("images/africa.jpg.json")
-array_2d = transform_array(json_data)
-
-json_reader.write_to_text(array_2d)
+array_transformed = transform_array(json_data)
+json_reader.write_to_text(array_transformed)
 
 #cwd = os.getcwd()
 #os.chdir(cwd + "/images")
