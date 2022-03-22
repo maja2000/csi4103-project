@@ -29,15 +29,15 @@ class PenPlotter(object):
         # When the machine has received all it needs from User input, it can then proceed to the next stage.
         self.machine.add_transition(trigger='input_finalized', source='GETTING_USER_INPUT', dest='CONVERTING_JPG_TO_JSON')
 
-        # When the file selected throws an error, we go to the BAD_INPUT.
+        # ERROR: When the file selected throws an error, we go to the BAD_INPUT.
         self.machine.add_transition(trigger='file_load_failure', source='GETTING_USER_INPUT',
                                     dest='BAD_INPUT')
 
-        # When the conversion fails, we go to the BAD_INPUT stage.
+        # ERROR: When the conversion fails, we go to the BAD_INPUT stage.
         self.machine.add_transition(trigger='conversion_failure', source='CONVERTING_JPG_TO_JSON',
                                     dest='BAD_INPUT')
 
-        # When the formatting fails, we go to BAD_INPUT state.
+        # ERROR: When the formatting fails, we go to BAD_INPUT state.
         self.machine.add_transition(trigger='formatting_error', source='FORMATTING_JSON',
                                     dest='BAD_INPUT')
 
@@ -51,14 +51,37 @@ class PenPlotter(object):
         self.machine.add_transition(trigger='finished_conversion', source='CONVERTING_JPG_TO_JSON', dest='FORMATTING_JSON')
 
 
+        # The formatting has been completed, and now it's ready, and waiting.
         self.machine.add_transition(trigger='formatting_complete', source='FORMATTING_JSON',
                                     dest='AWAIT_BEGIN')
 
+        # The machine has been given an instruction to start, and proceeds to send data to the arduino.
         self.machine.add_transition(trigger='begin_accepted', source='AWAIT_BEGIN',
+                                    dest='SENDING_INSTRUCTIONS_TO_ARDUINO')
+
+        # The machine has completed the sending of instructions to the arduino, and needs to listen.
+        self.machine.add_transition(trigger='send_complete', source='SENDING_INSTRUCTIONS_TO_ARDUINO',
                                     dest='RECEIVING_FROM_ARDUINO')
 
         # Do we need a E_Stop state?
         self.machine.add_transition(trigger='emergency_stop', source='RECEIVING_FROM_ARDUINO',
+                                    dest='E_STOP')
+
+        # When the drawing is done and the arduino stops sending feedback
+        # We return to the AWAIT_BEGIN so that we can redo the same drawing.
+        self.machine.add_transition(trigger='drawing_complete', source='RECEIVING_FROM_ARDUINO',
+                                    dest='AWAIT_BEGIN')
+
+        # We don't want to draw the loaded drawing, so we return to IDLE.
+        self.machine.add_transition(trigger='drawing_canceled', source='AWAIT_BEGIN',
+                                    dest='IDLE')
+
+        # If the emergency is cleared, return to receiving from the arduino
+        self.machine.add_transition(trigger='emergency_cleared', source='E_STOP',
+                                    dest='RECEIVING_FROM_ARDUINO')
+
+        # If the emergency isn't resolved, return to IDLE
+        self.machine.add_transition(trigger='aborted', source='E_STOP',
                                     dest='IDLE')
 
         # We need to figure out the Default State.
