@@ -1,4 +1,4 @@
-def array_to_2d(original_array):
+def transform_array(original_array):
     new_array = []
     for line in original_array:
         new_line = []
