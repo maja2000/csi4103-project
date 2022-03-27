@@ -8,7 +8,7 @@ import turtle
 from turtle import *
 
 image_to_json("circle_filled.jpg", draw_contours=2, draw_hatch=0)
-json_data = json_reader.read_json("images/circle_filled.jpg.json")
+json_data = json_reader.read_json("images/deathly_hallows.jpg.json")
 #image_to_json("africa.jpg", draw_contours=2, draw_hatch=0)
 #json_data = json_reader.read_json("images/africa.jpg.json")
 
