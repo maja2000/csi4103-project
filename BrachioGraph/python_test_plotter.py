@@ -7,8 +7,8 @@ from array_format import transform_array
 import turtle
 from turtle import *
 
-image_to_json("triangle_filled.png", draw_contours=2, draw_hatch=0)
-json_data = json_reader.read_json("images/triangle_filled.png.json")
+image_to_json("circle_filled.jpg", draw_contours=2, draw_hatch=0)
+json_data = json_reader.read_json("images/circle_filled.jpg.json")
 #image_to_json("africa.jpg", draw_contours=2, draw_hatch=0)
 #json_data = json_reader.read_json("images/africa.jpg.json")
 

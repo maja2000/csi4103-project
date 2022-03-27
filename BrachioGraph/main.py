@@ -11,7 +11,7 @@ bicep = 10.0
 # gotta figure out if this is actually origin
 origin = [0,0]
 
-image_to_json("triangle_filled.png", draw_contours=2, draw_hatch=0)
+image_to_json("circle_filled.jpg", draw_contours=2, draw_hatch=0)
 #image_to_json("africa.jpg", draw_contours=2, draw_hatch=0)
 #This code finds an image with the indicated name in the 'images' directory and:
 #    -draws the contours and hatch lines
@@ -23,7 +23,7 @@ image_to_json("triangle_filled.png", draw_contours=2, draw_hatch=0)
 #    draw_hatch = 16 (between 8 and 16)
 
 #json_data = json_reader.read_json("images/africa.jpg.json")
-json_data = json_reader.read_json("images/triangle_filled.png.json")
+json_data = json_reader.read_json("images/circle_filled.jpg.json")
 #array_transformed = transform_array(json_data)
 #json_reader.write_to_text(json_data)
 #json_reader.write_to_json(json_data)
