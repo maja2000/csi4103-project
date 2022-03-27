@@ -18,7 +18,8 @@ bgt = BrachioGraphTurtle(
 )
 
 def run_virtual_bg():
-	bg.plot_file(filename="images/africa.jpg.json")
+	#bg.plot_file(filename="images/africa.jpg.json")
+	bg.plot_file(filename="images/triangle_filled.png.json")
 
 def plot_area():
 	bgt.draw_grid()
