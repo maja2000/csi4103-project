@@ -28,5 +28,5 @@ def plot_area():
 	bgt.screen.exitonclick()
 
 if __name__ == '__main__':
-	run_virtual_bg()
-	#plot_area()
+	#run_virtual_bg()
+	plot_area()
