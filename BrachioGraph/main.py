@@ -22,8 +22,9 @@ image_to_json("africa.jpg", draw_contours=2, draw_hatch=0)
 #    draw_hatch = 16 (between 8 and 16)
 
 json_data = json_reader.read_json("images/africa.jpg.json")
-array_transformed = transform_array(json_data)
-json_reader.write_to_text(array_transformed)
+#array_transformed = transform_array(json_data)
+json_reader.write_to_text(json_data)
+json_reader.write_to_json(json_data)
 
 #cwd = os.getcwd()
 #os.chdir(cwd + "/images")
