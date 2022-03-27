@@ -4,8 +4,8 @@ from turtle_draw import BrachioGraphTurtle
 bg = BrachioGraph()
 
 bgt = BrachioGraphTurtle(
-    inner_arm=10.0,          # the length of the inner arm (blue)
-    outer_arm=10.5,          # the length of the outer arm (red)
+    inner_arm=10.5,          # the length of the inner arm (blue)
+    outer_arm=11,          # the length of the outer arm (red)
 
     shoulder_centre_angle=-60,  # the starting angle of the inner arm, relative to straight ahead
     shoulder_sweep=180,     # the arc covered by the shoulder motor
@@ -28,5 +28,5 @@ def plot_area():
 	bgt.screen.exitonclick()
 
 if __name__ == '__main__':
-	#run_virtual_bg()
-	plot_area()
+	run_virtual_bg()
+	#plot_area()
