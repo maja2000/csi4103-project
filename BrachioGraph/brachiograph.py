@@ -924,7 +924,7 @@ class Pen:
         sleep(0.3)
 
 
-    def down(self):
+    def up(self):
 
         if self.virtual_mode:
             self.virtual_pw = self.pw_down
@@ -934,7 +934,7 @@ class Pen:
             sleep(self.transition_time)
 
 
-    def up(self):
+    def down(self):
 
         if self.virtual_mode:
             self.virtual_pw = self.pw_up
