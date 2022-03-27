@@ -32,12 +32,14 @@ class BrachioGraph:
         arm_2_centre=90,
         hysteresis_correction_1=0,  # hardware error compensation
         hysteresis_correction_2=0,
-        bounds=[1, 1, 20, 26],      # the maximum rectangular drawing area
+        bounds=[-13, 3, 12, 15],      # the maximum rectangular drawing area
         wait=None,
         virtual_mode = False,
         pw_up=1500,                 # pulse-widths for pen up/down
         pw_down=1100,
     ):
+        #bl = self.bounds[0], self.bounds[1]
+        #tr = self.bounds[2], self.bounds[3]
 
         # set the pantograph geometry
         self.INNER_ARM = inner_arm
@@ -221,6 +223,9 @@ class BrachioGraph:
             lines=lines, rotate=rotate, bounds=bounds
         )
 
+        print("LINE ANALYSIS:")
+        print(rotate, x_mid_point, y_mid_point, box_x_mid_point, box_y_mid_point, divider)
+
         for line in lines:
 
             for point in line:
@@ -285,6 +290,11 @@ class BrachioGraph:
 
         min_x, max_x = min(x_values_in_lines), max(x_values_in_lines)
         min_y, max_y = min(y_values_in_lines), max(y_values_in_lines)
+
+        print("X vals")
+        print(min_x, max_x)
+        print("Y vals")
+        print(min_y, max_y)
 
         # Identify the range they span.
 
