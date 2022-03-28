@@ -20,8 +20,8 @@ class BrachioGraph:
 
     def __init__(
         self,
-        inner_arm=10,                # the lengths of the arms
-        outer_arm=10.5,
+        inner_arm=10.5,                # the lengths of the arms
+        outer_arm=11,
         servo_1_centre=1500,        # shoulder motor centre pulse-width
         servo_2_centre=1500,        # elbow motor centre pulse-width
         servo_1_angle_pws=[],       # pulse-widths for various angles
@@ -32,12 +32,14 @@ class BrachioGraph:
         arm_2_centre=90,
         hysteresis_correction_1=0,  # hardware error compensation
         hysteresis_correction_2=0,
-        bounds=[1, 1, 20, 26],      # the maximum rectangular drawing area
+        bounds=[-10, 7, 10, 19],      # the maximum rectangular drawing area
         wait=None,
         virtual_mode = False,
         pw_up=1500,                 # pulse-widths for pen up/down
         pw_down=1100,
     ):
+        #bl = self.bounds[0], self.bounds[1]
+        #tr = self.bounds[2], self.bounds[3]
 
         # set the pantograph geometry
         self.INNER_ARM = inner_arm
@@ -924,7 +926,7 @@ class Pen:
         sleep(0.3)
 
 
-    def down(self):
+    def up(self):
 
         if self.virtual_mode:
             self.virtual_pw = self.pw_down
@@ -934,7 +936,7 @@ class Pen:
             sleep(self.transition_time)
 
 
-    def up(self):
+    def down(self):
 
         if self.virtual_mode:
             self.virtual_pw = self.pw_up

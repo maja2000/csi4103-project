@@ -42,3 +42,9 @@ def write_to_text(jsonData):
         for item in jsonData:
             f.write(str(item))
         return
+
+def write_to_json(jsonData):
+    with open('images/json_coordinates.json', 'w') as f:
+        for item in jsonData:
+            f.write(str(item))
+        return
