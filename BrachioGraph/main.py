@@ -5,7 +5,7 @@ from array_format import transform_array
 import numpy
 import inverse_kinematics as ik
 
-draw_image = "puppy.png"
+draw_image = "alphabet.jpg"
 
 # Lengths of arms in cm (for now)
 forearm = 10.4
