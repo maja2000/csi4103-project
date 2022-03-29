@@ -2,3 +2,6 @@ __pycache__/
 BrachioGraph/__pycache__/
 *.pyc
 BrachioGraph/__pycache__/linedraw.cpython-39.pyc
+.idea/csi4103-project.iml
+.idea/misc.xml
+BrachioGraph/__pycache__/linedraw.cpython-39.pyc
