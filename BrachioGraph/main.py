@@ -5,6 +5,7 @@ from brachiograph import BrachioGraph
 from array_format import transform_array
 import inverse_kinematics as ik
 
+
 # Lengths of arms in cm (for now)
 forearm = 10.4
 bicep = 10.0
