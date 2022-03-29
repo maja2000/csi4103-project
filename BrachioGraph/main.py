@@ -5,13 +5,15 @@ from array_format import transform_array
 import numpy
 import inverse_kinematics as ik
 
+draw_image = "puppy.png"
+
 # Lengths of arms in cm (for now)
 forearm = 10.4
 bicep = 10.0
 # gotta figure out if this is actually origin
 origin = [0,0]
 
-image_to_json("deathly_hallows.jpg", draw_contours=2, draw_hatch=0)
+image_to_json(draw_image, draw_contours=2, draw_hatch=16)
 #image_to_json("africa.jpg", draw_contours=2, draw_hatch=0)
 #This code finds an image with the indicated name in the 'images' directory and:
 #    -draws the contours and hatch lines
@@ -23,7 +25,7 @@ image_to_json("deathly_hallows.jpg", draw_contours=2, draw_hatch=0)
 #    draw_hatch = 16 (between 8 and 16)
 
 #json_data = json_reader.read_json("images/africa.jpg.json")
-json_data = json_reader.read_json("images/deathly_hallows.jpg.json")
+json_data = json_reader.read_json("images/" + draw_image + ".json")
 #array_transformed = transform_array(json_data)
 #json_reader.write_to_text(json_data)
 #json_reader.write_to_json(json_data)
