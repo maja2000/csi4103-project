@@ -5,4 +5,4 @@ from PIL import Image, ImageOps
 # TODO: Make this take in command line arguments.
 img = Image.open('../BrachioGraph/images/Image.png').convert('L', dither=None)
 img = ImageOps.posterize(img, 2)
-img.save('greyscale.png')
+img.save('../BrachioGraph/images/greyscale.png')
