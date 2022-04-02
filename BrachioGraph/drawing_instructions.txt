@@ -1,0 +1,16 @@
+#In home
+sudo pigpiod
+source env/bin/activate
+cd BrachioGraph
+python
+
+from brachiograph import BrachioGraph
+
+bg = BrachioGraph()
+
+#Check the pen
+bg.pen.down()
+bg.pen.up()
+
+#Change the name of the image
+bg.plot_file("demo.json")
