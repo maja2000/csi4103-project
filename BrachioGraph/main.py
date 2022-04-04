@@ -1,9 +1,7 @@
-import os, numpy, sys
+import sys
 from linedraw import *
 from images import json_reader
 from brachiograph import BrachioGraph
-from array_format import transform_array
-import inverse_kinematics as ik
 
 
 # Lengths of arms in cm (for now)
